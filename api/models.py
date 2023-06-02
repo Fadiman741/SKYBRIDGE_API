@@ -14,6 +14,7 @@ class Property(models.Model):
         bathrooms=models.IntegerField()
         garage=models.IntegerField()
         size=models.IntegerField()
+        price=models.IntegerField()
 
         def __str__(self):
                 return self.name

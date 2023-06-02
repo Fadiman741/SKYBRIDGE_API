@@ -15,6 +15,7 @@ class PropertySerialiazer(serializers.Serializer):
         bathrooms=serializers.IntegerField()
         garage=serializers.IntegerField()
         size=serializers.IntegerField()
+        price=serializers.IntegerField()
 
         def create(self, data):
                 return Property.objects.create(**data)
@@ -31,6 +32,7 @@ class PropertySerialiazer(serializers.Serializer):
                 instance.bathrooms = data.get('bathrooms',instance.bathrooms)
                 instance.garage = data.get(' garage',instance. garage)
                 instance.name = data.get('size',instance.size)
+                instance.price = data.get('price',instance.size)
 
                 instance.save()
                 return instance
